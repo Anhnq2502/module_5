@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/case_study/prototype/style.css" />
   <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
   <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-  <title>Contract</title>
+  <title>Edit customer</title>
 </head>
 <body>
 <!-- header -->
@@ -102,6 +102,26 @@
           </ul>
         </li>
       </ul>
+      <form class="d-flex" role="search">
+        <!-- <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        /> -->
+        <!-- <button class="btn btn-outline-success" type="submit">
+          Search
+        </button> -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+                    class="nav-link furama py-0 d-flex justify-content-center align-items-center px-3"
+                    href="#"
+            >Contact</a
+            >
+          </li>
+        </ul>
+      </form>
     </div>
   </div>
 </nav>
@@ -111,76 +131,100 @@
 <div class="container-fluid px-0 mt-5 position-relative">
   <img src="https://furamavietnam.com/wp-content/uploads/2018/08/banner01.jpg?id=1433" alt="">
   <div class="position-absolute facility-title">
-    CONTRACT LIST
+    EDIT CUSTOMERS
   </div>
 </div>
 
 
-<div class="row mx-0 mt-5" style="height: 500px;">
-  <div class="col-12 px-0">
-    <h2 class="mb-3" style="color: #cbbe73; font-size: 27px; text-align: center;">Contract List</h2>
-    <table class="table table-border table-striped">
-      <thead>
-      <tr>
-        <th>Id Contract</th>
-        <th>Name Customer</th>
-        <th>Number Of Guests</th>
-        <th>Check In</th>
-        <th>Check Out</th>
-        <th>Email</th>
-        <th>Id Room</th>
-        <th></th>
-        <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>CO-0001</td>
-        <td>Nguyễn Quốc Anh</td>
-        <td>3</td>
-        <td>18/02/2023</td>
-        <td>05/03/2023</td>
-        <td>quocanh@gmail.com</td>
-        <td>RO-0001</td>
-        <td>
-          <button type="button" class="btn btn-primary">Edit</button>
-        </td>
-        <td>
-          <button type="button" class="btn btn-danger">Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <td>CO-0002</td>
-        <td>Nguyễn Quốc Anh</td>
-        <td>8</td>
-        <td>20/01/2023</td>
-        <td>10/02/2023</td>
-        <td>quocanh@gmail.com</td>
-        <td>VI-0001</td>
-        <td>
-          <button type="button" class="btn btn-primary">Edit</button>
-        </td>
-        <td>
-          <button type="button" class="btn btn-danger">Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <td>CO-0003</td>
-        <td>Nguyễn Quốc Anh</td>
-        <td>2</td>
-        <td>22/02/2022</td>
-        <td>23/04/2022</td>
-        <td>quocanh@gmail.com</td>
-        <td>VI-0002</td>
-        <td>
-          <button type="button" class="btn btn-primary">Edit</button>
-        </td>
-        <td>
-          <button type="button" class="btn btn-danger">Delete</button>
-        </td>
-      </tr>
-      </tbody>
-    </table>
+<div class="row mx-0" style="height: 700px;">
+  <div class="col-12">
+    <form action="" class="d-flex justify-content-center">
+      <div class="card" style="width: 30%;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); margin-top: 5%; margin-bottom: 100px;">
+        <div class="card-body">
+          <div class="d-flex mb-2 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <h5 class="card-title" style="font-weight: bold;">Name</h5>
+            </div>
+            <div class="col-6 px-0">
+              <input type="text" style="border-radius: 5px;" placeholder="Name">
+            </div>
+          </div>
+
+          <div class="d-flex mb-2 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <p class="card-text d-flex align-items-center" style="margin-right: 78px;">Date of birth</p>
+            </div>
+            <div class="col-6 px-0">
+              <input type="text" style="border-radius: 5px;" placeholder="Birthday">
+            </div>
+          </div>
+
+          <div class="d-flex mb-2 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <p class="card-text" style="margin-right: 75px;">Gender</p>
+            </div>
+            <div class="col-6 px-0">
+              <select style="border-radius: 5px; width: 97%;" name="type_room" id="a">
+                <option value="">Male</option>
+                <option value="">Female</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="d-flex mb-2 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <p class="card-text d-flex align-items-center" style="margin-right: 78px;">Identity:</p>
+            </div>
+            <div class="col-6 px-0">
+              <input type="text" style="border-radius: 5px;" placeholder="Identity">
+            </div>
+          </div>
+
+          <div class="d-flex mb-2 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <p class="card-text d-flex align-items-center" style="margin-right: 105px;">Phone number</p>
+            </div>
+            <div class="col-6 px-0">
+              <input type="text" style="border-radius: 5px;" placeholder="Phone number">
+            </div>
+          </div>
+
+          <div class="d-flex mb-3 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <p class="card-text d-flex align-items-center" style="margin-right: 105px;">Email</p>
+            </div>
+            <div class="col-6 px-0">
+              <input type="text" style="border-radius: 5px;" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="d-flex mb-3 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <p class="card-text d-flex align-items-center" style="margin-right: 105px;">Address</p>
+            </div>
+            <div class="col-6 px-0">
+              <input type="text" style="border-radius: 5px;" placeholder="Address">
+            </div>
+          </div>
+
+          <div class="d-flex mb-2 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <p class="card-text" style="margin-right: 75px;">Type Customer</p>
+            </div>
+            <div class="col-6 px-0">
+              <select style="border-radius: 5px; width: 97%;" name="type_room" id="">
+                <option value="">Diamond</option>
+                <option value="">Platinium</option>
+                <option value="">Gold</option>
+                <option value="">Silver</option>
+                <option value="">Member</option>
+              </select>
+            </div>
+          </div>
+          <input type="submit" class="btn btn-primary" value="Add">
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 

@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/case_study/prototype/style.css" />
   <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
   <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-  <title>Contract</title>
+  <title>Create Facility</title>
 </head>
 <body>
 <!-- header -->
@@ -31,7 +31,7 @@
       <img
               width="100%"
               height="5%"
-              src="/case_study/case_study/prototype/img/FURAMA (1).png"
+              src="/case_study/prototype/img/FURAMA (1).png"
               alt=""
       />
     </a>
@@ -106,81 +106,65 @@
   </div>
 </nav>
 
-<!-- container -->
-<!-- banner -->
-<div class="container-fluid px-0 mt-5 position-relative">
-  <img src="https://furamavietnam.com/wp-content/uploads/2018/08/banner01.jpg?id=1433" alt="">
-  <div class="position-absolute facility-title">
-    CONTRACT LIST
-  </div>
-</div>
+<div class="row mx-0" style="height: 800px;">
+  <div class="col-12">
+    <form action="" class="d-flex justify-content-center">
+      <div class="card" style="width: 30%;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); margin-top: 9%; margin-bottom: 100px;">
+        <img src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <div class="d-flex mb-2 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <h5 class="card-title" style="font-weight: bold;">Name of the room</h5>
+            </div>
+            <div class="col-6 px-0">
+              <input type="text" style="border-radius: 5px;" placeholder="Name">
+            </div>
+          </div>
 
+          <div class="d-flex mb-2 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <p class="card-text" style="margin-right: 75px;">Type room:</p>
+            </div>
+            <div class="col-6 px-0">
+              <select style="border-radius: 5px; width: 97%;" name="type_room" id="">
+                <option value="">Villa</option>
+                <option value="">House</option>
+                <option value="">Room</option>
+              </select>
+            </div>
+          </div>
 
-<div class="row mx-0 mt-5" style="height: 500px;">
-  <div class="col-12 px-0">
-    <h2 class="mb-3" style="color: #cbbe73; font-size: 27px; text-align: center;">Contract List</h2>
-    <table class="table table-border table-striped">
-      <thead>
-      <tr>
-        <th>Id Contract</th>
-        <th>Name Customer</th>
-        <th>Number Of Guests</th>
-        <th>Check In</th>
-        <th>Check Out</th>
-        <th>Email</th>
-        <th>Id Room</th>
-        <th></th>
-        <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>CO-0001</td>
-        <td>Nguyễn Quốc Anh</td>
-        <td>3</td>
-        <td>18/02/2023</td>
-        <td>05/03/2023</td>
-        <td>quocanh@gmail.com</td>
-        <td>RO-0001</td>
-        <td>
-          <button type="button" class="btn btn-primary">Edit</button>
-        </td>
-        <td>
-          <button type="button" class="btn btn-danger">Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <td>CO-0002</td>
-        <td>Nguyễn Quốc Anh</td>
-        <td>8</td>
-        <td>20/01/2023</td>
-        <td>10/02/2023</td>
-        <td>quocanh@gmail.com</td>
-        <td>VI-0001</td>
-        <td>
-          <button type="button" class="btn btn-primary">Edit</button>
-        </td>
-        <td>
-          <button type="button" class="btn btn-danger">Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <td>CO-0003</td>
-        <td>Nguyễn Quốc Anh</td>
-        <td>2</td>
-        <td>22/02/2022</td>
-        <td>23/04/2022</td>
-        <td>quocanh@gmail.com</td>
-        <td>VI-0002</td>
-        <td>
-          <button type="button" class="btn btn-primary">Edit</button>
-        </td>
-        <td>
-          <button type="button" class="btn btn-danger">Delete</button>
-        </td>
-      </tr>
-      </tbody>
-    </table>
+          <div class="d-flex mb-2 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <p class="card-text d-flex align-items-center" style="margin-right: 78px;">Room size:</p>
+            </div>
+            <div class="col-6 px-0">
+              <input type="text" style="border-radius: 5px;" placeholder="Room size">
+            </div>
+          </div>
+
+          <div class="d-flex mb-3 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <p class="card-text d-flex align-items-center" style="margin-right: 105px;">Image:</p>
+            </div>
+            <div class="col-6 px-0">
+              <input type="text" style="border-radius: 5px;" placeholder="Image">
+            </div>
+          </div>
+
+          <div class="d-flex mb-3 row">
+            <div class="col-6 pe-0 d-flex align-items-center">
+              <p class="card-text d-flex align-items-center" style="margin-right: 105px;">Price:</p>
+            </div>
+            <div class="col-6 px-0">
+              <input type="text" style="border-radius: 5px;" placeholder="Price">
+            </div>
+          </div>
+
+          <input type="submit" class="btn btn-primary" value="Add">
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 
