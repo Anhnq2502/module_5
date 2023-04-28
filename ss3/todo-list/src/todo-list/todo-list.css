@@ -1,0 +1,10 @@
+h1, div {
+    margin: 0;
+    text-align: center;
+    padding: 0;
+}
+
+ol, li {
+    text-align: left;
+    font-size: 30px;
+}
