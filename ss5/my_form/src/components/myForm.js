@@ -1,7 +1,7 @@
 import React from "react";
 import {useState} from "react";
 
-export default function MyForm() {
+export function MyForm() {
     const MESSAGE_ERROR = {
         userName: "Name error",
         email: "Email error",

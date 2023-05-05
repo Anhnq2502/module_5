@@ -1,0 +1,28 @@
+label {
+    display: block;
+}
+
+.custom-input {
+    padding-bottom: 1%;
+}
+
+.custom-input-error label {
+    color: red;
+}
+
+.custom-input-error input {
+    border: 2px solid red;
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+    margin: 0;
+}
+
+form {
+    padding-left: 5%;
+}
+.h1{
+    padding-left: 5%;
+}
