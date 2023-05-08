@@ -1,20 +1,23 @@
 import {Component} from "react";
+import {Formik} from "formik";
+import * as Yup from 'yup';
+import {ToastContainer, toast} from 'react-toastify'
 
 export class CreateFacility extends Component {
     render() {
         return (
             <div>
                 <>
-                    <meta charSet="UTF-8" />
-                    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta charSet="UTF-8"/>
+                    <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                     <link
                         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
                         rel="stylesheet"
                         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
                         crossOrigin="anonymous"
                     />
-                    <link rel="stylesheet" href="/case_study/prototype/style.css" />
+                    <link rel="stylesheet" href="/case_study/prototype/style.css"/>
                     <link
                         rel="stylesheet"
                         href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
@@ -27,11 +30,11 @@ export class CreateFacility extends Component {
                     {/* header */}
                     <nav
                         className="navbar navbar-expand-lg fixed-top py-0"
-                        style={{ backgroundColor: "rgb(45, 111, 99)" }}
+                        style={{backgroundColor: "rgb(45, 111, 99)"}}
                     >
-                        <div className="container-fluid" style={{ paddingLeft: "4%" }}>
+                        <div className="container-fluid" style={{paddingLeft: "4%"}}>
                             <a
-                                style={{ width: "5%", height: "5%" }}
+                                style={{width: "5%", height: "5%"}}
                                 className="navbar-brand py-0"
                                 href="/case_study/case_study/prototype/index.html"
                             >
@@ -51,11 +54,11 @@ export class CreateFacility extends Component {
                                 aria-expanded="false"
                                 aria-label="Toggle navigation"
                             >
-                                <span className="navbar-toggler-icon" />
+                                <span className="navbar-toggler-icon"/>
                             </button>
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li className="nav-item" style={{ height: 50 }}>
+                                    <li className="nav-item" style={{height: 50}}>
                                         <a
                                             className="nav-link active furama py-0 d-flex justify-content-center align-items-center px-3"
                                             aria-current="page"
@@ -123,7 +126,37 @@ export class CreateFacility extends Component {
                             </div>
                         </div>
                     </nav>
-                    <div className="row mx-0" style={{ height: 800 }}>
+                    <Formik
+                        initialValues={{
+                            roomName: '',
+                            typeRoom: '',
+                            roomSize: '',
+                            img: '',
+                            price: ''
+                        }}
+                        validationSchema={Yup.object({
+                            roomName : Yup.string()
+                                .required("Nhập tên phòng"),
+                            typeRoom: Yup.string()
+                                .required("Nhập loại phòng"),
+                            roomSize: Yup.number()
+                                .required("Nhập kích thước phòng")
+                                .min(0),
+                            img: Yup.string()
+                                .required("Nhập ảnh"),
+                            price: Yup.number()
+                                .required("Nhập giá phòng")
+                                .min(0),
+                        })}
+                        onSubmit={(values, {setSubmitting}) =>{
+                            setTimeout(()=>{
+                                setSubmitting(false)
+                                toast(`Room ${values.nameRoom} create Ok`)
+                        },1000)
+                        }}
+                        >
+
+                    <div className="row mx-0" style={{height: 800}}>
                         <div className="col-12">
                             <form action="" className="d-flex justify-content-center">
                                 <div
@@ -143,27 +176,27 @@ export class CreateFacility extends Component {
                                     <div className="card-body">
                                         <div className="d-flex mb-2 row">
                                             <div className="col-6 pe-0 d-flex align-items-center">
-                                                <h5 className="card-title" style={{ fontWeight: "bold" }}>
+                                                <h5 className="card-title" style={{fontWeight: "bold"}}>
                                                     Name of the room
                                                 </h5>
                                             </div>
                                             <div className="col-6 px-0">
                                                 <input
                                                     type="text"
-                                                    style={{ borderRadius: 5 }}
+                                                    style={{borderRadius: 5}}
                                                     placeholder="Name"
                                                 />
                                             </div>
                                         </div>
                                         <div className="d-flex mb-2 row">
                                             <div className="col-6 pe-0 d-flex align-items-center">
-                                                <p className="card-text" style={{ marginRight: 75 }}>
+                                                <p className="card-text" style={{marginRight: 75}}>
                                                     Type room:
                                                 </p>
                                             </div>
                                             <div className="col-6 px-0">
                                                 <select
-                                                    style={{ borderRadius: 5, width: "97%" }}
+                                                    style={{borderRadius: 5, width: "97%"}}
                                                     name="type_room"
                                                     id=""
                                                 >
@@ -177,7 +210,7 @@ export class CreateFacility extends Component {
                                             <div className="col-6 pe-0 d-flex align-items-center">
                                                 <p
                                                     className="card-text d-flex align-items-center"
-                                                    style={{ marginRight: 78 }}
+                                                    style={{marginRight: 78}}
                                                 >
                                                     Room size:
                                                 </p>
@@ -185,7 +218,7 @@ export class CreateFacility extends Component {
                                             <div className="col-6 px-0">
                                                 <input
                                                     type="text"
-                                                    style={{ borderRadius: 5 }}
+                                                    style={{borderRadius: 5}}
                                                     placeholder="Room size"
                                                 />
                                             </div>
@@ -194,7 +227,7 @@ export class CreateFacility extends Component {
                                             <div className="col-6 pe-0 d-flex align-items-center">
                                                 <p
                                                     className="card-text d-flex align-items-center"
-                                                    style={{ marginRight: 105 }}
+                                                    style={{marginRight: 105}}
                                                 >
                                                     Image:
                                                 </p>
@@ -202,7 +235,7 @@ export class CreateFacility extends Component {
                                             <div className="col-6 px-0">
                                                 <input
                                                     type="text"
-                                                    style={{ borderRadius: 5 }}
+                                                    style={{borderRadius: 5}}
                                                     placeholder="Image"
                                                 />
                                             </div>
@@ -211,7 +244,7 @@ export class CreateFacility extends Component {
                                             <div className="col-6 pe-0 d-flex align-items-center">
                                                 <p
                                                     className="card-text d-flex align-items-center"
-                                                    style={{ marginRight: 105 }}
+                                                    style={{marginRight: 105}}
                                                 >
                                                     Price:
                                                 </p>
@@ -219,7 +252,7 @@ export class CreateFacility extends Component {
                                             <div className="col-6 px-0">
                                                 <input
                                                     type="text"
-                                                    style={{ borderRadius: 5 }}
+                                                    style={{borderRadius: 5}}
                                                     placeholder="Price"
                                                 />
                                             </div>
@@ -234,8 +267,10 @@ export class CreateFacility extends Component {
                             </form>
                         </div>
                     </div>
+                    </Formik>
+                    </>
                     {/* footer */}
-                    <footer className="relative pt-8 pb-6" style={{ backgroundColor: "#addccf" }}>
+                    <footer className="relative pt-8 pb-6" style={{backgroundColor: "#addccf"}}>
                         <div className="container mx-auto px-4">
                             <div className="flex flex-wrap text-left lg:text-left">
                                 <div className="w-full lg:w-6/12 px-4">
@@ -250,25 +285,25 @@ export class CreateFacility extends Component {
                                             className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                                             type="button"
                                         >
-                                            <i className="fab fa-twitter" />
+                                            <i className="fab fa-twitter"/>
                                         </button>
                                         <button
                                             className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                                             type="button"
                                         >
-                                            <i className="fab fa-facebook-square" />
+                                            <i className="fab fa-facebook-square"/>
                                         </button>
                                         <button
                                             className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                                             type="button"
                                         >
-                                            <i className="fab fa-dribbble" />
+                                            <i className="fab fa-dribbble"/>
                                         </button>
                                         <button
                                             className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                                             type="button"
                                         >
-                                            <i className="fab fa-github" />
+                                            <i className="fab fa-github"/>
                                         </button>
                                     </div>
                                 </div>
@@ -355,7 +390,7 @@ export class CreateFacility extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <hr className="my-6 border-blueGray-300" />
+                            <hr className="my-6 border-blueGray-300"/>
                             <div className="flex flex-wrap items-center md:justify-between justify-center">
                                 <div className="w-full md:w-4/12 px-4 mx-auto text-center">
                                     <div className="text-sm text-blueGray-500 font-semibold py-1">
@@ -373,9 +408,10 @@ export class CreateFacility extends Component {
                             </div>
                         </div>
                     </footer>
+
                 </>
 
-            </div>
+
         );
     }
 }

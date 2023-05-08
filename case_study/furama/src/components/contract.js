@@ -356,7 +356,6 @@ export class Contract extends Component {
                         </div>
                     </footer>
                 </>
-
             </div>
         );
     }

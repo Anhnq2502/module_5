@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import * as facilityService from "../service/facilityService";
 import { Link } from "react-router-dom";
 
-function Facilities() {
+export function Facilities() {
     const [facilityList, setFacilityList] = useState([]);
     const [facilityData, setFacilityData] = useState();
     useEffect(() => {

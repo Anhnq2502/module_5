@@ -1,9 +1,9 @@
 import './App.css';
-import {Facility} from "./components/facility";
+import {CreateCustomer} from "./components/create-customer";
 
 function App() {
   return (
-    <Facility></Facility>
+    <CreateCustomer/>
   );
 }
 
