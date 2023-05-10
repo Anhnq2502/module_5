@@ -1,0 +1,53 @@
+{
+"covids":
+[
+  {
+    "id" : 1,
+    "Country": "Viet Nam",
+    "CountryCode": "500",
+    "Province": "Quảng Trị",
+    "City": "Đông Hà",
+    "CityCode": "500",
+    "Lat": "0",
+    "Lon": "0",
+    "Confirmed": 0,
+    "Deaths": 0,
+    "Recovered": 0,
+    "Active": 0,
+    "Date": "2020-01-22T00:00:00Z",
+    "Comment": "no reliable source to provide recovered data"
+  },
+  {
+    "id": 2,
+    "Country": "Viet Nam",
+    "CountryCode": "400",
+    "Province": "Quảng Nam ",
+    "City": "Hội An",
+    "CityCode": "400",
+    "Lat": "0",
+    "Lon": "0",
+    "Confirmed": 2,
+    "Deaths": 0,
+    "Recovered": 0,
+    "Active": 2,
+    "Date": "2020-01-23T00:00:00Z",
+    "Comment": "no reliable source to provide recovered data"
+  },
+  {
+    "id": 3,
+    "Country": "Viet Nam",
+    "CountryCode": "300",
+    "Province": "Huế",
+    "City": "TP Huế",
+    "CityCode": "300",
+    "Lat": "0",
+    "Lon": "0",
+    "Confirmed": 2,
+    "Deaths": 0,
+    "Recovered": 0,
+    "Active": 2,
+    "Date": "2020-01-23T00:00:00Z",
+    "Comment": "no reliable source to provide recovered data"
+  }
+]
+}
