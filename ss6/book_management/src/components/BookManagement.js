@@ -14,12 +14,15 @@ export function BookManagement() {
         }
         fetchApi()
     }, [])
+    const handleChange = async () => {
+        await bookService.remove(books.id)
+    }
     return (
         <>
             <table className="table">
                 <thead>
                     <tr>
-                        <th>Tittle</th>
+                        <th>Title</th>
                         <th>Quantity</th>
                         <th className="text-center">Action</th>
                     </tr>
@@ -32,9 +35,7 @@ export function BookManagement() {
                             <td>{book.quantity}</td>
                             <td className="d-flex justify-content-center">
                                 <Link to={`/edit/${book.id}`}><button type="submit" className="btn btn-primary me-3">Edit</button></Link>
-                                <button type="submit" className="btn btn-danger" onClick={()=> {
-
-                                }}>Delete</button>
+                                <button type="submit" className="btn btn-danger" onClick={()=> handleChange()}>Delete</button>
                             </td>
                         </tr>
                     ))

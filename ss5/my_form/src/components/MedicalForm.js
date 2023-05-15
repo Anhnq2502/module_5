@@ -111,6 +111,7 @@ export function MedicalForm() {
                         </div>
 
                         <div className="form-check form-check-inline">
+                            <label>Giới tính</label>
                             <input
                                 className="form-check-input"
                                 type="radio"
@@ -154,11 +155,9 @@ export function MedicalForm() {
                             <label>Công ty làm việc</label>
                             <input
                                 type="text"
-                                name="nationality"
-                                value={form.nationality || ""}
+                                name="company"
                                 onChange={handleChange}
                             />
-                            <p className="error">{errors.nationality}</p>
                         </div>
 
                         <div className={`custom-input ${
@@ -168,11 +167,9 @@ export function MedicalForm() {
                             <label>Bộ phận làm việc</label>
                             <input
                                 type="text"
-                                name="nationality"
-                                value={form.nationality || ""}
+                                name="ap"
                                 onChange={handleChange}
                             />
-                            <p className="error">{errors.nationality}</p>
                         </div>
 
                         <h1>Địa chỉ liên lạc tại Việt Nam</h1>

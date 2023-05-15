@@ -1,0 +1,36 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Minh",
+      "age": 24,
+      "class": 1
+    },
+    {
+      "id": 2,
+      "name": "Khải",
+      "age": 24,
+      "class": 2
+    },
+    {
+      "id": 3,
+      "name": "Chính",
+      "age": 20,
+      "class": 3
+    }
+  ],
+  "classes": [
+    {
+      "id": 1,
+      "className": "C1122G1"
+    },
+    {
+      "id": 2,
+      "className": "C1022G1"
+    },
+    {
+      "id": 3,
+      "className": "C1222G1"
+    }
+  ]
+}

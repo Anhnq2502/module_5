@@ -1,0 +1,48 @@
+{
+  "contracts": [
+    {
+      "id": 1,
+      "name": "Peter",
+      "image": "https://v2.convertapi.com/d/fqy0avfblxhazsoxi08cdgrpxhrkdorg",
+      "email": "peter@gmail.com",
+      "phone": "0912123109",
+      "typeId": 3
+    },
+    {
+      "id": 2,
+      "name": "Richard",
+      "image": "https://v2.convertapi.com/d/yyxkdx7rrfbmi3gan92vn08kd14537sp",
+      "email": "richard@gmail.com",
+      "phone": "0912123123",
+      "typeId": 2
+    },
+    {
+      "name": "Nguyễn Quốc Anh",
+      "email": "Benpro1132@gmail.com",
+      "phone": "0905816806",
+      "typeId": 3,
+      "id": 4
+    },
+    {
+      "name": "Nguyễn Quốc Anh Minh",
+      "email": "Benpro1132@gmail.com",
+      "phone": "0905816806",
+      "typeId": 2,
+      "id": 5
+    }
+  ],
+  "types": [
+    {
+      "id": 1,
+      "typeName": "Vip"
+    },
+    {
+      "id": 2,
+      "typeName": "Pro"
+    },
+    {
+      "id": 3,
+      "typeName": "VipPro"
+    }
+  ]
+}

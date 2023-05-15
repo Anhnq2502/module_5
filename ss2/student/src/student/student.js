@@ -1,5 +1,6 @@
-
 import "./student.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 
 function Student() {
@@ -61,3 +62,8 @@ function Student() {
       </>
     );
   }
+
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(
+    React.createElement("h1", { style: { textAlign: "center" } }, Student)
+  );

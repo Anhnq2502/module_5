@@ -1,0 +1,62 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "productCode": 1,
+      "productName": "Áo",
+      "date": "2023-05-15",
+      "quantity": 22,
+      "typeId": "2"
+    },
+    {
+      "id": 2,
+      "productCode": "2",
+      "productName": "Quần",
+      "date": "2023-05-15",
+      "quantity": 3,
+      "typeId": "1"
+    },
+    {
+      "id": 3,
+      "productCode": 3,
+      "productName": "Giày Nike",
+      "date": "2023-02-23",
+      "quantity": 3,
+      "typeId": 3
+    },
+    {
+      "id": 4,
+      "productCode": 4,
+      "productName": "Áo sơ mi",
+      "date": "2023-02-02",
+      "quantity": 9,
+      "typeId": 1
+    },
+    {
+      "id": 5,
+      "productCode": 5,
+      "productName": "Mũ",
+      "date": "2022-10-02",
+      "quantity": 9,
+      "typeId": "4"
+    }
+  ],
+  "types": [
+    {
+      "id": 1,
+      "typeName": "Quần"
+    },
+    {
+      "id": 2,
+      "typeName": "Áo"
+    },
+    {
+      "id": 3,
+      "typeName": "Giày"
+    },
+    {
+      "id": 4,
+      "typeName": "Mũ"
+    }
+  ]
+}
