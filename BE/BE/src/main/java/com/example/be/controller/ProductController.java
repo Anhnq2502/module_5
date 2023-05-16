@@ -4,9 +4,7 @@ import com.example.be.model.Product;
 import com.example.be.service.IProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,13 +17,27 @@ public class ProductController {
     public ProductController(IProductService iProductService) {
         this.iProductService = iProductService;
     }
-    @RequestMapping
+    @GetMapping("")
     public ResponseEntity<List<Product>> findAllProduct() {
-        List<Product> customers = (List<Product>) iProductService.findALlProduct();
-        if (customers.isEmpty()) {
+        List<Product> products = (List<Product>) iProductService.findALlProduct();
+        if (products.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(customers, HttpStatus.OK);
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+    @GetMapping("/{productId}")
+    public ResponseEntity<Product> findProductByProductId(@PathVariable int productId) {
+        Product product = iProductService.findProductByProductId(productId);
+        if (product == null) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(product,HttpStatus.OK);
     }
 
+    @PutMapping("/{productId}")
+    @ResponseBody
+    public ResponseEntity<HttpStatus> updateProduct(@PathVariable int productId) {
+        iProductService.edit(iProductService.findProductByProductId(productId));
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
 }

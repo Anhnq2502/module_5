@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IProductService {
     List<Product> findALlProduct();
+    Product findProductByProductId(int productId);
+    void edit(Product product);
 }

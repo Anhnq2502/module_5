@@ -9,4 +9,5 @@ import java.util.List;
 public interface IProductRepository extends JpaRepository<Product,Integer> {
     @Query(value = "SELECT * FROM product.product", nativeQuery = true)
     List<Product> findAllProduct();
+    Product findProductByProductId( int productId);
 }
