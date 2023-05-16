@@ -16,8 +16,8 @@ public class Product {
     private String dateAdd;
     @Column(name = "quantity")
     private int quantity;
-    @ManyToOne
-    @JoinColumn(name = "type_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "type_id", referencedColumnName = "type_id")
     private Type type;
 
     public Product() {
