@@ -30,84 +30,84 @@ export function ListProduct() {
         listType()
     }, [])
 
-    const handleSearch = async (e) => {
-        e.preventDefault()
-        return await axios.get(`http://localhost:8080/products?q=${value}`)
-            .then((res) => {
-                setProductList(res.data);
-            })
-            .catch((err) => console.log(err))
-    }
-    const handleSort = async (e) => {
-        let value = e.target.value;
-        setSortValue(value)
-        return await axios.get(`http://localhost:8080/products?_sort=${value}&_order=asc`)
-            .then((res) => {
-                setProductList(res.data);
-            })
-            .catch((err) => console.log(err))
-    }
-    const handleSearchType = async (e) => {
-        return await axios.get(`http://localhost:8080/products?typeId_like=${e}`)
-            .then((res) => {
-                setProductList(res.data);
-            })
-            .catch((err) => console.log(err))
-    }
+    // const handleSearch = async (e) => {
+    //     e.preventDefault()
+    //     return await axios.get(`http://localhost:8080/product?q=${value}`)
+    //         .then((res) => {
+    //             setProductList(res.data);
+    //         })
+    //         .catch((err) => console.log(err))
+    // }
+    // const handleSort = async (e) => {
+    //     let value = e.target.value;
+    //     setSortValue(value)
+    //     return await axios.get(`http://localhost:8080/product?_sort=${value}&_order=asc`)
+    //         .then((res) => {
+    //             setProductList(res.data);
+    //         })
+    //         .catch((err) => console.log(err))
+    // }
+    // const handleSearchType = async (e) => {
+    //     return await axios.get(`http://localhost:8080/product?typeId_like=${e}`)
+    //         .then((res) => {
+    //             setProductList(res.data);
+    //         })
+    //         .catch((err) => console.log(err))
+    // }
     return (
         <>
-            <form style={{
-                margin: "auto",
-                padding: "15px",
-                maxWidth: "400px",
-                alignContent: "center"
-            }}
-                  className="d-flex input-group w-auto"
-                  onSubmit={handleSearch}
-            >
-                <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Search"
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                />
-                <button type="submit">Search</button>
-            </form>
-            <form>
-                <div style={{marginLeft:"8%",maxWidth:"80%"}} className="row">
-                    <div className="col-1">
-                        <h5>Find by type: </h5>
-                    </div>
-                    <div className="col-9">
-                        <select style={{width: "15%", borderRadius: "2px", height: "35px"}}
-                                onChange={(e) => handleSearchType(e.target.value)}
-                        >
-                            {types.map((type, index) => (
-                                <option value={type.id}>{type.typeName}</option>
-                            ))}
-                        </select>
-                    </div>
-                </div>
-            </form>
-            <div style={{marginLeft:"8%",maxWidth:"80%"}} className="row">
-                <div className="col-1">
-                    <h5>Sort By:</h5>
-                </div>
-                <div className="col-9">
-                    <select style={{width: "15%", borderRadius: "2px", height: "35px"}}
-                            onChange={handleSort}
-                            value={sortValue}
-                    >
-                        <option>Choose type</option>
-                        {sortOptions.map((item, index) => (
-                            <option value={item} key={index}>
-                                {item}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-            </div>
+            {/*<form style={{*/}
+            {/*    margin: "auto",*/}
+            {/*    padding: "15px",*/}
+            {/*    maxWidth: "400px",*/}
+            {/*    alignContent: "center"*/}
+            {/*}}*/}
+            {/*      className="d-flex input-group w-auto"*/}
+            {/*      onSubmit={handleSearch}*/}
+            {/*>*/}
+            {/*    <input*/}
+            {/*        type="text"*/}
+            {/*        className="form-control"*/}
+            {/*        placeholder="Search"*/}
+            {/*        value={value}*/}
+            {/*        onChange={(e) => setValue(e.target.value)}*/}
+            {/*    />*/}
+            {/*    <button type="submit">Search</button>*/}
+            {/*</form>*/}
+            {/*<form>*/}
+            {/*    <div style={{marginLeft:"8%",maxWidth:"80%"}} className="row">*/}
+            {/*        <div className="col-1">*/}
+            {/*            <h5>Find by type: </h5>*/}
+            {/*        </div>*/}
+            {/*        <div className="col-9">*/}
+            {/*            <select style={{width: "15%", borderRadius: "2px", height: "35px"}}*/}
+            {/*                    onChange={(e) => handleSearchType(e.target.value)}*/}
+            {/*            >*/}
+            {/*                {types.map((type, index) => (*/}
+            {/*                    <option value={type.id}>{type.typeName}</option>*/}
+            {/*                ))}*/}
+            {/*            </select>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</form>*/}
+            {/*<div style={{marginLeft:"8%",maxWidth:"80%"}} className="row">*/}
+            {/*    <div className="col-1">*/}
+            {/*        <h5>Sort By:</h5>*/}
+            {/*    </div>*/}
+            {/*    <div className="col-9">*/}
+            {/*        <select style={{width: "15%", borderRadius: "2px", height: "35px"}}*/}
+            {/*                onChange={handleSort}*/}
+            {/*                value={sortValue}*/}
+            {/*        >*/}
+            {/*            <option>Choose type</option>*/}
+            {/*            {sortOptions.map((item, index) => (*/}
+            {/*                <option value={item} key={index}>*/}
+            {/*                    {item}*/}
+            {/*                </option>*/}
+            {/*            ))}*/}
+            {/*        </select>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
             <div className="container">
                 <h1 className="text-center">List Product</h1>
                 {/*<button type="submit" onClick={() => handleSort()} className="btn btn-primary"></button>*/}
@@ -138,11 +138,11 @@ export function ListProduct() {
                             <td>{index + 1}</td>
                             <td>{product.productCode}</td>
                             <td>{product.productName}</td>
-                            <td>{product.date}</td>
+                            <td>{product.dateAdd}</td>
                             <td>{product.quantity}</td>
                             <td>{product.type.typeName}</td>
                             <td className="d-flex justify-content-center">
-                                <Link to={`/edit/${product.id}`}>
+                                <Link to={`/edit/${product.productId}`}>
                                     <button type="submit" className="btn btn-primary">Edit</button>
                                 </Link>
                             </td>

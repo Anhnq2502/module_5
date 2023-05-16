@@ -8,9 +8,9 @@ export const findAllProduct = async () => {
         console.log(e)
     }
 }
-export const updateProduct = async (products) => {
+export const updateProduct = async (product) => {
     try {
-        await axios.put(`http://localhost:8080/products/${products.id}`, {...products})
+        await axios.put(`http://localhost:8080/product/${product.id}`, {...product})
     } catch (e) {
         console.log(e)
     }
@@ -23,9 +23,9 @@ export const getProduct = async (id) => {
         console.log(e)
     }
 }
-export const findProductById = async (id) => {
+export const findProductById = async (productId) => {
     try {
-        const result = await axios.get(`http://localhost:8080/products/${id}`)
+        const result = await axios.get(`http://localhost:8080/product/${productId}`)
         return result.data
     } catch (e) {
         console.log(e)
