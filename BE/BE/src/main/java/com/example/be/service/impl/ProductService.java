@@ -6,6 +6,8 @@ import com.example.be.service.IProductService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class ProductService implements IProductService {
     private final IProductRepository iProductRepository;
@@ -27,5 +29,15 @@ public class ProductService implements IProductService {
     @Override
     public void edit(Product product) {
         iProductRepository.save(product);
+    }
+
+    @Override
+    public Product save(Product product) {
+        return iProductRepository.save(product);
+    }
+
+    @Override
+    public Optional<Product> findById(int productId) {
+        return iProductRepository.findById(productId);
     }
 }

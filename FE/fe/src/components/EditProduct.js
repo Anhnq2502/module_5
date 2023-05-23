@@ -46,7 +46,8 @@ export function EditProduct() {
                             productName: products?.productName,
                             dateAdd: products?.dateAdd,
                             quantity: products?.quantity,
-                            typeId: products?.typeId
+                            typeId: products?.type.typeId,
+                            typeName: products?.type.typeName
                         }}
                         validationSchema={Yup.object({
                             productCode: Yup.string()
@@ -65,6 +66,9 @@ export function EditProduct() {
                         onSubmit={(values, {setSubmitting}) => {
                             console.log(values)
                             const edit = async () => {
+                                console.log(values)
+                                values.type.typeId = parseInt(values.typeId)
+                                delete values.typeId
                                 await productService.updateProduct(values)
                                 setSubmitting(false)
                                 alert("Sửa mã " + products.productCode + " thành công")

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/product")
@@ -36,8 +37,12 @@ public class ProductController {
 
     @PutMapping("/{productId}")
     @ResponseBody
-    public ResponseEntity<HttpStatus> updateProduct(@PathVariable int productId) {
-        iProductService.edit(iProductService.findProductByProductId(productId));
-        return ResponseEntity.ok(HttpStatus.OK);
+    public ResponseEntity<Product> updateProduct(@PathVariable int productId, @RequestBody Product product) {
+        Optional<Product> productOptional = iProductService.findById(productId);
+        if (!productOptional.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        product.setProductId(productOptional.get().getProductId());
+        return new ResponseEntity<>(iProductService.save(product), HttpStatus.OK);
     }
 }

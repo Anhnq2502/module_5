@@ -10,7 +10,7 @@ export const findAllProduct = async () => {
 }
 export const updateProduct = async (product) => {
     try {
-        await axios.put(`http://localhost:8080/product/${product.id}`, {...product})
+        await axios.put(`http://localhost:8080/product/${product.productId}`, {...product})
     } catch (e) {
         console.log(e)
     }
